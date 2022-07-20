@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+$primary: #6C8F93;
+$primary-light: #B2C4C5;
+$primary-dark: #33575C;
+$danger: #a54444;
+$danger-light: #ca7d7d;
+$danger-dark: #572323;
+
+
+.bg-grey{
+  background-color:$primary-light !important ;
+}
+
+.btn-primary-light {
+  border-color: $primary!important;
+  background-color: $primary-light!important;
+  color: $primary-dark!important;
+  &:hover {
+    background-color: $primary!important;
+    border-color: $primary-dark!important;
+    color: white!important;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-danger {
+    border-color: $danger;
+    background-color: $danger-light;
+    color: white;
+    &:hover {
+      background-color: $danger;
+      border-color: $danger-dark;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  
+  .text-danger {
+    color: $danger !important;
+  }
+
+  .text-primary {
+    color: $primary !important;
+  }
+  
+  .text-primary-dark {
+    color: $primary-dark !important;
+  }
+
+  .navbar-brand{
+    color: $primary;
+}

@@ -1,0 +1,76 @@
+<div class="bg-login container-fluid site-height py-5">
+  <div class="align-items-center h-100 justify-content-center row">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="addTodosForm" (ngSubmit)="add()">
+            <label class="mb-1" for="name"> Aufgabe </label>
+            <div class="form-group mb-0">
+              <input
+                autofocus
+                class="form-control"
+                formControlName="name"
+                id="name"
+                placeholder="zB. Server starten"
+                type="text"
+                [ngClass]="{
+                  'is-invalid':
+                    !this.addTodosForm.controls['name'].valid &&
+                    this.addTodosForm.controls['name'].touched
+                }"
+              />
+            </div>
+            <small
+              class="text-danger"
+              *ngIf="
+                !this.addTodosForm.controls['name'].valid &&
+                this.addTodosForm.controls['name'].touched
+              "
+            >
+              Geben Sie bitte eine Aufgabe ein.
+            </small>
+            <div>
+              <label class="mb-1 mt-3" for="due-date"> Zu erledigen bis </label>
+            </div>
+            <div class="form-group mb-0">
+              <input
+                class="form-control"
+                formControlName="dueDate"
+                id="due-date"
+                placeholder="zB. 2010-02-15"
+                type="date"
+                [ngClass]="{
+                  'is-invalid':
+                    !this.addTodosForm.controls['dueDate'].valid &&
+                    this.addTodosForm.controls['dueDate'].touched
+                }"
+              />
+            </div>
+            <small
+              class="text-danger"
+              *ngIf="
+                !this.addTodosForm.controls['dueDate'].valid &&
+                this.addTodosForm.controls['dueDate'].touched
+              "
+            >
+              Geben Sie bitte ein gültiges Datum ein.
+            </small>
+            <div class="pt-2 my-2 row">
+              <div class="col">
+                <button
+                  class="btn btn-primary-light float-end"
+                  id="adding"
+                  type="submit"
+                  [disabled]="!addTodosForm.valid"
+                  *ngIf="!waitForResponse"
+                >
+                  Hinzufügen
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

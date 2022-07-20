@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row" *ngIf="tasks.length === 0">
+    <div class="col col-12 text-center mt-5">Es gibt noch keine Aufgaben!</div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-6 mb-5">
+      <ul class="list-group">
+        <ng-container *ngFor="let task of tasks; let index = index">
+          <li
+            class="list-group-item"
+            *ngIf="index < 2 || showAll === true"
+            [ngClass]="{
+              'text-danger': isDateInPast(task.dueDate),
+              'bg-grey': task.isFinished
+            }"
+            (click)="setTaskChosen(task)"
+          >
+            {{
+              task.name.length > 10
+                ? (task.name | slice: 0:10) + "..."
+                : task.name
+            }}
+          </li>
+        </ng-container>
+      </ul>
+      <div class="mt-3 text-center">
+        <button
+          class="btn btn-primary-light"
+          *ngIf="tasks.length > 2 && showAll === false"
+          (click)="showAll = true"
+        >
+          mehr laden...
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <app-detail-view
+        [task]="taskChosen"
+        (delete)="deleteTask($event)"
+        (dismiss)="taskChosen = undefined"
+        (isFinished)="finishTask($event)"
+        (isNotFinished)="toBeFinished($event)"
+        *ngIf="taskChosen"
+      ></app-detail-view>
+    </div>
+  </div>
+</div>
