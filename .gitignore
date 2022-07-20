@@ -45,6 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/.editorconfig
-/.browserslistrc
-/package-lock.json
+.editorconfig
+.browserslistrc
+package-lock.json
