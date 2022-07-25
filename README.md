@@ -1,8 +1,8 @@
 # Live showcase
 
-You can see a live version of this application here: [https://angular-ivy-qplmet.stackblitz.io](https://angular-ivy-qplmet.stackblitz.io).
+You can see a live version of this application here: [https://github-iddqrj.stackblitz.io](https://github-iddqrj.stackblitz.io).
 
-The editor view of the live version can be accessed here: [https://stackblitz.com/edit/angular-ivy-qplmet?file=src/app/app.component.ts](https://stackblitz.com/edit/angular-ivy-qplmet?file=src/app/app.component.ts).
+The editor view of the live version can be accessed here: [https://stackblitz.com/edit/github-iddqrj](https://stackblitz.com/edit/github-iddqrj).
 
 # Assignment
 
